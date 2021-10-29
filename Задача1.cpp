@@ -5,7 +5,7 @@ using namespace std;
 int x, a, b, c;
 int main()
 {
-	setlocale(LC_ALL, "");
+	setlocale(LC_ALL, "Rus");
 	cout << "Введите трехзначное число (не допускается повтор цифр в числе):" << endl;
 	cin >> x;
 	while((x < 100) || (x > 999))
