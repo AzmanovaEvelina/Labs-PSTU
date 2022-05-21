@@ -1,0 +1,4 @@
+C:\Users\HONOR\Desktop\Семестр 2\Calculator_2\Debug\Calculator_2.vcxproj.AssemblyReference.cache
+C:\Users\HONOR\Desktop\Семестр 2\Calculator_2\Debug\Calculator_2.exe
+C:\Users\HONOR\Desktop\Семестр 2\Calculator_2\Debug\Calculator2.MyForm.resources
+C:\Users\HONOR\Desktop\Семестр 2\Calculator_2\Debug\Calculator_2.vcxproj.GenerateResource.cache
