@@ -101,7 +101,7 @@ void Matrix::print_Matrix() {
     }
 }
 
-void Matrix::Minor(Matrix* temp_matrix, int indRow, int indCol) {
+void Matrix::Minor(Matrix* temp_matrix, int indRow, int indCol) {                   // получение минора матрицы
     int ki = 0;
     for (int i = 0; i < this->size_Matrix_n; i++) {
         if (i != indRow) {
@@ -115,11 +115,11 @@ void Matrix::Minor(Matrix* temp_matrix, int indRow, int indCol) {
         }
     }
 }
-float Matrix::Determinant() {
+float Matrix::Determinant() {                                                          // определитель матрицы
     float temp = 0;   
     int k = 1;      
     if (this->size_Matrix_n < 1) {
-        MessageBox::Show("�� ������ ������ �������!", "������!"); 
+        MessageBox::Show("Не верный размер матрицы!", "Ошибка!"); 
         return 0;
     }
     else if (this->size_Matrix_n == 1)
@@ -137,7 +137,7 @@ float Matrix::Determinant() {
     }
     return temp;
 }
-void Matrix::union_Matrix() {
+void Matrix::union_Matrix() {                                                      // создание союзной матрицы из алгебраических дополнений каждого элемента
     Matrix union_matrix(this->size_Matrix_n, this->size_Matrix_m);
     float temp = 0;
     for (int i = 0; i < this->size_Matrix_n; i++) {
@@ -151,7 +151,7 @@ void Matrix::union_Matrix() {
     }
     this->set_Matrix(union_matrix.matrix);
 }
-void Matrix::Transposition_Matrix() {
+void Matrix::Transposition_Matrix() {                                               // транспонирование союзной матрицы
     Matrix transposition_matrix(this->size_Matrix_n, this->size_Matrix_m);
     for (int i = 0; i < this->size_Matrix_n; i++) {
         for (int j = 0; j < this->size_Matrix_m; j++) {
@@ -160,7 +160,7 @@ void Matrix::Transposition_Matrix() {
     }
     this->set_Matrix(transposition_matrix.matrix);
 }
-void Matrix::inverse_Matrix(float det_matrix) {
+void Matrix::inverse_Matrix(float det_matrix) {                                   // получение обратной матрицы
     float det = det_matrix;
     Matrix inverse_matrix(this->size_Matrix_n, this->size_Matrix_m);
     for (int i = 0; i < this->size_Matrix_n; i++) {
@@ -170,7 +170,7 @@ void Matrix::inverse_Matrix(float det_matrix) {
     }
     this->set_Matrix(inverse_matrix.matrix);
 }
-void Matrix::solution_x(Matrix& x) {
+void Matrix::solution_x(Matrix& x) {                                             // умножение обратной матрицы на столбец свободных коэффициентов
     float result = 0;
     Matrix solution_matr(this->size_Matrix_n, x.size_Matrix_m);
     for (int i = 0; i < this->size_Matrix_n; i++) {
@@ -182,9 +182,9 @@ void Matrix::solution_x(Matrix& x) {
     }
     x.set_Matrix(solution_matr.matrix);
 }
-void Matrix::Reading_matrix(std::string filename) {
-    std::ifstream reading(filename);
-    if (reading) {
+void Matrix::Reading_matrix(std::string filename) {                             // чтение данных из файлов
+    std::ifstream reading(filename); // поток для чтения из файла 
+    if (reading) { // если файл открылся 
         for (int i = 0; i < size_Matrix_n; i++) {
             for (int j = 0; j < size_Matrix_m; j++) {
                 reading >> matrix[i][j];
@@ -193,7 +193,7 @@ void Matrix::Reading_matrix(std::string filename) {
         }
     }
     else {
-        MessageBox::Show("������ �������� �����!", "��������!");
+        MessageBox::Show("Ошибка открытия файла!", "Внимание!");
     }
 
     reading.close();
