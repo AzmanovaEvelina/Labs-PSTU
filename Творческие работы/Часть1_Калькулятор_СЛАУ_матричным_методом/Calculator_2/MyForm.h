@@ -10,7 +10,7 @@ namespace Calculator2 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Сводка для MyForm
+	/// РЎРІРѕРґРєР° РґР»СЏ MyForm
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
@@ -19,13 +19,13 @@ namespace Calculator2 {
 		{
 			InitializeComponent();
 			//
-			//TODO: добавьте код конструктора
+			//TODO: РґРѕР±Р°РІСЊС‚Рµ РєРѕРґ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°
 			//
 		}
 
 	protected:
 		/// <summary>
-		/// Освободить все используемые ресурсы.
+		/// РћСЃРІРѕР±РѕРґРёС‚СЊ РІСЃРµ РёСЃРїРѕР»СЊР·СѓРµРјС‹Рµ СЂРµСЃСѓСЂСЃС‹.
 		/// </summary>
 		~MyForm()
 		{
@@ -54,7 +54,7 @@ namespace Calculator2 {
 	private: System::Windows::Forms::TextBox^ textBox1_det;
 	private: System::Windows::Forms::DataGridView^ dataGridView3_matr_trans;
 
-	private: System::Windows::Forms::ToolStripMenuItem^ обПрограммеToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ РѕР±РџСЂРѕРіСЂР°РјРјРµToolStripMenuItem;
 	private: System::Windows::Forms::MenuStrip^ menuStrip2;
 	private: System::Windows::Forms::DataGridView^ dataGridView1_inverse_matr;
 
@@ -71,7 +71,7 @@ namespace Calculator2 {
 
 	private: System::Windows::Forms::Label^ label7;
 
-	private: System::Windows::Forms::ToolStripMenuItem^ выходToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ РІС‹С…РѕРґToolStripMenuItem;
 	private: System::Windows::Forms::Label^ label10;
 	private: System::Windows::Forms::GroupBox^ groupBox1;
 	private: System::Windows::Forms::GroupBox^ groupBox2;
@@ -118,14 +118,14 @@ namespace Calculator2 {
 
 	private:
 		/// <summary>
-		/// Обязательная переменная конструктора.
+		/// РћР±СЏР·Р°С‚РµР»СЊРЅР°СЏ РїРµСЂРµРјРµРЅРЅР°СЏ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР°.
 		/// </summary>
 
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Требуемый метод для поддержки конструктора — не изменяйте 
-		/// содержимое этого метода с помощью редактора кода.
+		/// РўСЂРµР±СѓРµРјС‹Р№ РјРµС‚РѕРґ РґР»СЏ РїРѕРґРґРµСЂР¶РєРё РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° вЂ” РЅРµ РёР·РјРµРЅСЏР№С‚Рµ 
+		/// СЃРѕРґРµСЂР¶РёРјРѕРµ СЌС‚РѕРіРѕ РјРµС‚РѕРґР° СЃ РїРѕРјРѕС‰СЊСЋ СЂРµРґР°РєС‚РѕСЂР° РєРѕРґР°.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -138,9 +138,9 @@ namespace Calculator2 {
 			this->button1_det = (gcnew System::Windows::Forms::Button());
 			this->textBox1_det = (gcnew System::Windows::Forms::TextBox());
 			this->dataGridView3_matr_trans = (gcnew System::Windows::Forms::DataGridView());
-			this->обПрограммеToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->РѕР±РџСЂРѕРіСЂР°РјРјРµToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip2 = (gcnew System::Windows::Forms::MenuStrip());
-			this->выходToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->РІС‹С…РѕРґToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->dataGridView1_inverse_matr = (gcnew System::Windows::Forms::DataGridView());
 			this->dataGridView1_b_for_solution = (gcnew System::Windows::Forms::DataGridView());
 			this->dataGridView1_solution_x = (gcnew System::Windows::Forms::DataGridView());
@@ -232,7 +232,7 @@ namespace Calculator2 {
 			this->button1_solution->Name = L"button1_solution";
 			this->button1_solution->Size = System::Drawing::Size(124, 52);
 			this->button1_solution->TabIndex = 6;
-			this->button1_solution->Text = L"Решить";
+			this->button1_solution->Text = L"Р РµС€РёС‚СЊ";
 			this->button1_solution->UseVisualStyleBackColor = true;
 			this->button1_solution->Click += gcnew System::EventHandler(this, &MyForm::button1_solution_Click);
 			// 
@@ -242,7 +242,7 @@ namespace Calculator2 {
 			this->button1_set_matr->Name = L"button1_set_matr";
 			this->button1_set_matr->Size = System::Drawing::Size(126, 33);
 			this->button1_set_matr->TabIndex = 7;
-			this->button1_set_matr->Text = L"Создать";
+			this->button1_set_matr->Text = L"РЎРѕР·РґР°С‚СЊ";
 			this->button1_set_matr->UseVisualStyleBackColor = true;
 			this->button1_set_matr->Click += gcnew System::EventHandler(this, &MyForm::button1_set_matr_Click);
 			// 
@@ -262,7 +262,7 @@ namespace Calculator2 {
 			this->button1_set_b->Name = L"button1_set_b";
 			this->button1_set_b->Size = System::Drawing::Size(132, 32);
 			this->button1_set_b->TabIndex = 10;
-			this->button1_set_b->Text = L"Создать";
+			this->button1_set_b->Text = L"РЎРѕР·РґР°С‚СЊ";
 			this->button1_set_b->UseVisualStyleBackColor = true;
 			this->button1_set_b->Click += gcnew System::EventHandler(this, &MyForm::button1_set_b_Click);
 			// 
@@ -274,7 +274,7 @@ namespace Calculator2 {
 			this->button1_det->Name = L"button1_det";
 			this->button1_det->Size = System::Drawing::Size(174, 34);
 			this->button1_det->TabIndex = 11;
-			this->button1_det->Text = L"Определитель";
+			this->button1_det->Text = L"РћРїСЂРµРґРµР»РёС‚РµР»СЊ";
 			this->button1_det->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->button1_det->UseVisualStyleBackColor = true;
 			this->button1_det->UseWaitCursor = true;
@@ -299,22 +299,22 @@ namespace Calculator2 {
 			this->dataGridView3_matr_trans->Size = System::Drawing::Size(409, 212);
 			this->dataGridView3_matr_trans->TabIndex = 13;
 			// 
-			// обПрограммеToolStripMenuItem
+			// РѕР±РџСЂРѕРіСЂР°РјРјРµToolStripMenuItem
 			// 
-			this->обПрограммеToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->РѕР±РџСЂРѕРіСЂР°РјРјРµToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->обПрограммеToolStripMenuItem->Name = L"обПрограммеToolStripMenuItem";
-			this->обПрограммеToolStripMenuItem->Size = System::Drawing::Size(155, 27);
-			this->обПрограммеToolStripMenuItem->Text = L"Об программе";
-			this->обПрограммеToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::обПрограммеToolStripMenuItem_Click);
+			this->РѕР±РџСЂРѕРіСЂР°РјРјРµToolStripMenuItem->Name = L"РѕР±РџСЂРѕРіСЂР°РјРјРµToolStripMenuItem";
+			this->РѕР±РџСЂРѕРіСЂР°РјРјРµToolStripMenuItem->Size = System::Drawing::Size(155, 27);
+			this->РѕР±РџСЂРѕРіСЂР°РјРјРµToolStripMenuItem->Text = L"РћР± РїСЂРѕРіСЂР°РјРјРµ";
+			this->РѕР±РџСЂРѕРіСЂР°РјРјРµToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::РѕР±РџСЂРѕРіСЂР°РјРјРµToolStripMenuItem_Click);
 			// 
 			// menuStrip2
 			// 
 			this->menuStrip2->BackColor = System::Drawing::SystemColors::ActiveCaption;
 			this->menuStrip2->ImageScalingSize = System::Drawing::Size(20, 20);
 			this->menuStrip2->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(2) {
-				this->обПрограммеToolStripMenuItem,
-					this->выходToolStripMenuItem
+				this->РѕР±РџСЂРѕРіСЂР°РјРјРµToolStripMenuItem,
+					this->РІС‹С…РѕРґToolStripMenuItem
 			});
 			this->menuStrip2->Location = System::Drawing::Point(0, 0);
 			this->menuStrip2->Name = L"menuStrip2";
@@ -322,14 +322,14 @@ namespace Calculator2 {
 			this->menuStrip2->TabIndex = 2;
 			this->menuStrip2->Text = L"menuStrip2";
 			// 
-			// выходToolStripMenuItem
+			// РІС‹С…РѕРґToolStripMenuItem
 			// 
-			this->выходToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->РІС‹С…РѕРґToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->выходToolStripMenuItem->Name = L"выходToolStripMenuItem";
-			this->выходToolStripMenuItem->Size = System::Drawing::Size(83, 27);
-			this->выходToolStripMenuItem->Text = L"Выход";
-			this->выходToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::выходToolStripMenuItem_Click);
+			this->РІС‹С…РѕРґToolStripMenuItem->Name = L"РІС‹С…РѕРґToolStripMenuItem";
+			this->РІС‹С…РѕРґToolStripMenuItem->Size = System::Drawing::Size(83, 27);
+			this->РІС‹С…РѕРґToolStripMenuItem->Text = L"Р’С‹С…РѕРґ";
+			this->РІС‹С…РѕРґToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::РІС‹С…РѕРґToolStripMenuItem_Click);
 			// 
 			// dataGridView1_inverse_matr
 			// 
@@ -370,7 +370,7 @@ namespace Calculator2 {
 			this->button1_file->Name = L"button1_file";
 			this->button1_file->Size = System::Drawing::Size(212, 34);
 			this->button1_file->TabIndex = 22;
-			this->button1_file->Text = L"Скачать из файла";
+			this->button1_file->Text = L"РЎРєР°С‡Р°С‚СЊ РёР· С„Р°Р№Р»Р°";
 			this->button1_file->TextAlign = System::Drawing::ContentAlignment::BottomCenter;
 			this->button1_file->UseVisualStyleBackColor = true;
 			this->button1_file->UseWaitCursor = true;
@@ -398,7 +398,7 @@ namespace Calculator2 {
 			this->button1_file_b->Name = L"button1_file_b";
 			this->button1_file_b->Size = System::Drawing::Size(205, 37);
 			this->button1_file_b->TabIndex = 25;
-			this->button1_file_b->Text = L"Скачать из файла";
+			this->button1_file_b->Text = L"РЎРєР°С‡Р°С‚СЊ РёР· С„Р°Р№Р»Р°";
 			this->button1_file_b->UseVisualStyleBackColor = true;
 			this->button1_file_b->UseWaitCursor = true;
 			this->button1_file_b->Click += gcnew System::EventHandler(this, &MyForm::button1_file_b_Click);
@@ -432,7 +432,7 @@ namespace Calculator2 {
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(343, 25);
 			this->label10->TabIndex = 30;
-			this->label10->Text = L"Количество неизвестных в системе";
+			this->label10->Text = L"РљРѕР»РёС‡РµСЃС‚РІРѕ РЅРµРёР·РІРµСЃС‚РЅС‹С… РІ СЃРёСЃС‚РµРјРµ";
 			// 
 			// groupBox1
 			// 
@@ -454,7 +454,7 @@ namespace Calculator2 {
 			this->groupBox1->Size = System::Drawing::Size(469, 516);
 			this->groupBox1->TabIndex = 31;
 			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L"Основная матричная система А";
+			this->groupBox1->Text = L"РћСЃРЅРѕРІРЅР°СЏ РјР°С‚СЂРёС‡РЅР°СЏ СЃРёСЃС‚РµРјР° Рђ";
 			// 
 			// groupBox2
 			// 
@@ -472,7 +472,7 @@ namespace Calculator2 {
 			this->groupBox2->Size = System::Drawing::Size(365, 389);
 			this->groupBox2->TabIndex = 32;
 			this->groupBox2->TabStop = false;
-			this->groupBox2->Text = L"Столбец свободных коэффициентов";
+			this->groupBox2->Text = L"РЎС‚РѕР»Р±РµС† СЃРІРѕР±РѕРґРЅС‹С… РєРѕСЌС„С„РёС†РёРµРЅС‚РѕРІ";
 			// 
 			// label5
 			// 
@@ -512,7 +512,7 @@ namespace Calculator2 {
 			this->groupBox3->Size = System::Drawing::Size(442, 389);
 			this->groupBox3->TabIndex = 33;
 			this->groupBox3->TabStop = false;
-			this->groupBox3->Text = L"Союзная матрица А*";
+			this->groupBox3->Text = L"РЎРѕСЋР·РЅР°СЏ РјР°С‚СЂРёС†Р° Рђ*";
 			// 
 			// groupBox4
 			// 
@@ -529,7 +529,7 @@ namespace Calculator2 {
 			this->groupBox4->Size = System::Drawing::Size(557, 284);
 			this->groupBox4->TabIndex = 34;
 			this->groupBox4->TabStop = false;
-			this->groupBox4->Text = L"Обратная матрица А";
+			this->groupBox4->Text = L"РћР±СЂР°С‚РЅР°СЏ РјР°С‚СЂРёС†Р° Рђ";
 			// 
 			// label1
 			// 
@@ -554,7 +554,7 @@ namespace Calculator2 {
 			this->groupBox5->Size = System::Drawing::Size(223, 284);
 			this->groupBox5->TabIndex = 35;
 			this->groupBox5->TabStop = false;
-			this->groupBox5->Text = L"Столбец свободных коэффициентов";
+			this->groupBox5->Text = L"РЎС‚РѕР»Р±РµС† СЃРІРѕР±РѕРґРЅС‹С… РєРѕСЌС„С„РёС†РёРµРЅС‚РѕРІ";
 			// 
 			// label2
 			// 
@@ -579,7 +579,7 @@ namespace Calculator2 {
 			this->groupBox6->Size = System::Drawing::Size(180, 284);
 			this->groupBox6->TabIndex = 37;
 			this->groupBox6->TabStop = false;
-			this->groupBox6->Text = L"Ответ";
+			this->groupBox6->Text = L"РћС‚РІРµС‚";
 			// 
 			// label3
 			// 
@@ -643,7 +643,7 @@ namespace Calculator2 {
 			this->groupBox7->Size = System::Drawing::Size(821, 104);
 			this->groupBox7->TabIndex = 41;
 			this->groupBox7->TabStop = false;
-			this->groupBox7->Text = L"Теория";
+			this->groupBox7->Text = L"РўРµРѕСЂРёСЏ";
 			// 
 			// label11
 			// 
@@ -655,7 +655,7 @@ namespace Calculator2 {
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(341, 25);
 			this->label11->TabIndex = 31;
-			this->label11->Text = L"Союзная матрица А* составлена из";
+			this->label11->Text = L"РЎРѕСЋР·РЅР°СЏ РјР°С‚СЂРёС†Р° Рђ* СЃРѕСЃС‚Р°РІР»РµРЅР° РёР·";
 			// 
 			// label12
 			// 
@@ -667,7 +667,7 @@ namespace Calculator2 {
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(376, 25);
 			this->label12->TabIndex = 32;
-			this->label12->Text = L"алгебраических дополнений матрицы А";
+			this->label12->Text = L"Р°Р»РіРµР±СЂР°РёС‡РµСЃРєРёС… РґРѕРїРѕР»РЅРµРЅРёР№ РјР°С‚СЂРёС†С‹ Рђ";
 			// 
 			// label13
 			// 
@@ -679,7 +679,7 @@ namespace Calculator2 {
 			this->label13->Name = L"label13";
 			this->label13->Size = System::Drawing::Size(130, 25);
 			this->label13->TabIndex = 33;
-			this->label13->Text = L"Замечание!";
+			this->label13->Text = L"Р—Р°РјРµС‡Р°РЅРёРµ!";
 			// 
 			// label14
 			// 
@@ -727,7 +727,7 @@ namespace Calculator2 {
 			this->label17->Name = L"label17";
 			this->label17->Size = System::Drawing::Size(29, 31);
 			this->label17->TabIndex = 43;
-			this->label17->Text = L"А";
+			this->label17->Text = L"Рђ";
 			// 
 			// label18
 			// 
@@ -776,7 +776,7 @@ namespace Calculator2 {
 			this->label21->Name = L"label21";
 			this->label21->Size = System::Drawing::Size(29, 31);
 			this->label21->TabIndex = 45;
-			this->label21->Text = L"А";
+			this->label21->Text = L"Рђ";
 			// 
 			// label22
 			// 
@@ -788,7 +788,7 @@ namespace Calculator2 {
 			this->label22->Name = L"label22";
 			this->label22->Size = System::Drawing::Size(29, 31);
 			this->label22->TabIndex = 46;
-			this->label22->Text = L"А";
+			this->label22->Text = L"Рђ";
 			// 
 			// label23
 			// 
@@ -860,7 +860,7 @@ namespace Calculator2 {
 			this->label28->Name = L"label28";
 			this->label28->Size = System::Drawing::Size(29, 31);
 			this->label28->TabIndex = 50;
-			this->label28->Text = L"А";
+			this->label28->Text = L"Рђ";
 			// 
 			// label30
 			// 
@@ -908,7 +908,7 @@ namespace Calculator2 {
 			this->MaximizeBox = false;
 			this->Name = L"MyForm";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"Решение СЛАУ матричным методом";
+			this->Text = L"Р РµС€РµРЅРёРµ РЎР›РђРЈ РјР°С‚СЂРёС‡РЅС‹Рј РјРµС‚РѕРґРѕРј";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1_matr_1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1_size_n_m))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2_matr_b))->EndInit();
@@ -936,7 +936,7 @@ namespace Calculator2 {
 		}
 #pragma endregion
 
-private: System::Void обПрограммеToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void РѕР±РџСЂРѕРіСЂР°РјРјРµToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void button1_set_matr_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void button1_solution_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void button1_set_b_Click(System::Object^ sender, System::EventArgs^ e);
@@ -944,7 +944,7 @@ private: System::Void button1_det_Click(System::Object^ sender, System::EventArg
 private: System::Void button1_solution_inverse_b_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void button1_file_Click(System::Object^ sender, System::EventArgs^ e);
 private: System::Void button1_file_b_Click(System::Object^ sender, System::EventArgs^ e);
-private: System::Void выходToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
+private: System::Void РІС‹С…РѕРґToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e);
 	   private: void Show_Matrix_1();
 	   private: void Show_Matrix_b();
 	   private: void Show_union_transposition_Matrix();
