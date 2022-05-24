@@ -497,7 +497,7 @@ Graph<T> create_graph(Graph<T>& graph)   // создание графа
 
 void hours(int h_2) {                                            // подсчет разницы времени
     int house_1 = 21;
-    cout << "Âðåìÿ â ïóòè ñîêðàòèëîñü íà " << house_1 - h_2 << " ÷." << endl;
+    cout << "Время в пути сократилось на  " << house_1 - h_2 << " ч." << endl;
 
 }
 
@@ -656,11 +656,11 @@ Graph<int> Graph_new()                 // создание нового граф
 {
 
     int edge_count, first_vertex, second_vertex, weight_edge, vertex_count;
-    cout << "Ââåäèòå êîëè÷åñòâî âåðøèí ãðàôà: ";
+    cout << "Введите количество вершин графа: ";
     cin >> vertex_count;
     Graph<int> graph(vertex_count);
     cout << endl;
-    cout << "Ââåäèòå êîëè÷åñòâî ðåáåð ãðàôà: ";
+    cout << "Введите количество ребер графа: ";
     cin >> edge_count; cout << endl;
     for (int i = 1; i <= vertex_count; ++i) {
         int* vertPtr = &i;
@@ -668,19 +668,19 @@ Graph<int> Graph_new()                 // создание нового граф
     }
 
     for (int i = 0; i < edge_count; ++i) {
-        cout << "ÈÑÕÎÄÍÀß âåðøèíà: "; cin >> first_vertex; cout << endl;
+        cout << "ИСХОДНАЯ вершина:"; cin >> first_vertex; cout << endl;
         int* first_vertex_ptr = &first_vertex;
-        cout << "ÊÎÍÅ×ÍÀß âåðøèíà: "; cin >> second_vertex; cout << endl;
+        cout << "КОНЕЧНАЯ вершина: "; cin >> second_vertex; cout << endl;
         int* second_vertex_ptr = &second_vertex;
 
-        cout << "Âåñ ðåáðà: "; cin >> weight_edge; cout << endl;
+        cout << "Вес ребра: "; cin >> weight_edge; cout << endl;
         graph.insert_edge(*first_vertex_ptr, *second_vertex_ptr, weight_edge);
     }
     cout << endl;
     return graph;
 }
 
-void drawMenuText(string text, int x1, int y1)   // îòðèñîâêà òåêñòà êíîïîê
+void drawMenuText(string text, int x1, int y1)   // отрисовка текста кнопок
 {
     GLvoid* font = GLUT_BITMAP_HELVETICA_18;
     string s = text;
@@ -689,7 +689,7 @@ void drawMenuText(string text, int x1, int y1)   // îòðèñîâêà òåêñ�
         glutBitmapCharacter(font, s[j]);
 }
 
-void drawMenu()                // îòðèñîâêà ìåíþ
+void drawMenu()                // отрисовка меню
 {
     int __ot_1 = 60;
     int __ot_2 = 730;
@@ -802,7 +802,7 @@ void drawMenu()                // îòðèñîâêà ìåíþ
     drawMenuText("Clear", __ot_1, __ot_2 - __ot_1 - 452);
 }
 
-void Click_menu(int btn, int stat, int x, int y) {             // ðàáîòà êíîïîê ìåíþ
+void Click_menu(int btn, int stat, int x, int y) {            // работа кнопок меню
     int __ot_1 = 60;
     int __ot_2 = 730;
 
@@ -840,9 +840,9 @@ void Click_menu(int btn, int stat, int x, int y) {             // ðàáîòà �
             int weight_edge;
             int size_m = graph.get_Size_of_matrix();
 
-            cout << "ÈÑÕÎÄÍÀß âåðøèíà: "; cin >> first_vertex; cout << endl;
+            cout << "ИСХОДНАЯ вершина: "; cin >> first_vertex; cout << endl;
             int* firsr_vertex_ptr = &first_vertex;
-            cout << "ÊÎÍÅ×ÍÀß âåðøèíà: "; cin >> second_vertex; cout << endl;
+            cout << "КОНЕЧНАЯ вершина: "; cin >> second_vertex; cout << endl;
             int* second_vertex_ptr = &second_vertex;
 
             if (first_vertex > size_m || second_vertex > size_m) {
@@ -852,7 +852,7 @@ void Click_menu(int btn, int stat, int x, int y) {             // ðàáîòà �
                 graph.insert_vertex(*vertPtr);
             }
 
-            cout << "Âåñ ðåáðà: "; cin >> weight_edge; cout << endl;
+            cout << "Вес ребра: "; cin >> weight_edge; cout << endl;
             graph.insert_edge(*firsr_vertex_ptr, *second_vertex_ptr, weight_edge);
         }
         if (x > __ot_1 && x < __ot_1 + 150 && y >  __ot_1 + 350 && y < __ot_1 + 380)
@@ -860,14 +860,14 @@ void Click_menu(int btn, int stat, int x, int y) {             // ðàáîòà �
             int count_vertex = graph.get_Size_of_matrix();
             int first_vertex;
 
-            cout << "Ââåäèòå âåðøèíó: "; cin >> first_vertex; cout << endl;
+            cout << "Введите вершину: "; cin >> first_vertex; cout << endl;
             int* first_vertex_ptr = &first_vertex;
             if (first_vertex == count_vertex)
             {
                 count_vertex--;
                 graph.DeleteVertex();
             }
-            else cout << "Íåâîçìîæíî óäàëèòü âåðøèíó \n";
+            else cout << "Невозможно удалить вершину \n";
           
         }
         if (x > __ot_1 && x < __ot_1 + 150 && y >  __ot_1 + 400 && y < __ot_1 + 430)
@@ -882,7 +882,7 @@ void Click_menu(int btn, int stat, int x, int y) {             // ðàáîòà �
     glutPostRedisplay();
 }
 
-void display()              // êàðòèíêà îêíà, îêíî
+void display()              // картинка окна, окно
 {
     glShadeModel(GL_SMOOTH);
     glMatrixMode(GL_PROJECTION);
