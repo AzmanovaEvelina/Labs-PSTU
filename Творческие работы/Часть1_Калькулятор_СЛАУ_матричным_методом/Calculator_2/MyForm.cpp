@@ -15,12 +15,12 @@ float det_matrix_1;
 int matrix_size_n, matrix_size_m;
 Matrix matrix_1, matrix_b,union_matrix, transposition_matrix,inverse_matrix, matrix_x;
 
-System::Void Calculator2::MyForm::обПрограммеToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
+System::Void Calculator2::MyForm::РѕР±РџСЂРѕРіСЂР°РјРјРµToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
-	MessageBox::Show("Калькулятор находит решение  системы n линейных уравнений с n неизвестными методом обратной матрицы ", "Справка");
+	MessageBox::Show("РљР°Р»СЊРєСѓР»СЏС‚РѕСЂ РЅР°С…РѕРґРёС‚ СЂРµС€РµРЅРёРµ  СЃРёСЃС‚РµРјС‹ n Р»РёРЅРµР№РЅС‹С… СѓСЂР°РІРЅРµРЅРёР№ СЃ n РЅРµРёР·РІРµСЃС‚РЅС‹РјРё РјРµС‚РѕРґРѕРј РѕР±СЂР°С‚РЅРѕР№ РјР°С‚СЂРёС†С‹ ", "РЎРїСЂР°РІРєР°");
 	return System::Void();
 }
-System::Void Calculator2::MyForm::выходToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
+System::Void Calculator2::MyForm::РІС‹С…РѕРґToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	Application::Exit();
 	return System::Void();
@@ -120,6 +120,9 @@ System::Void Calculator2::MyForm::button1_det_Click(System::Object^ sender, Syst
 {
 	det_matrix_1 = matrix_1.Determinant();
 	textBox1_det->Text = Convert::ToString(det_matrix_1);
+	if (det_matrix_1 == 0) {
+		MessageBox::Show("РћРїСЂРµРґРµР»РёС‚РµР»СЊ РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ СЂР°РІРµРЅ 0!", "Р’РЅРёРјР°РЅРёРµ!");
+	}
 	return System::Void();
 }
 
@@ -130,7 +133,7 @@ System::Void Calculator2::MyForm::button1_solution_inverse_b_Click(System::Objec
 System::Void Calculator2::MyForm::button1_file_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	if (textBox1_file->Text == " ") {
-		MessageBox::Show("Введите название файла!", "Внимание!");
+		MessageBox::Show("Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ С„Р°Р№Р»Р°!", "Р’РЅРёРјР°РЅРёРµ!");
 		return;
 	}
 	std::string filename;
@@ -155,7 +158,7 @@ System::Void Calculator2::MyForm::button1_file_Click(System::Object^ sender, Sys
 System::Void Calculator2::MyForm::button1_file_b_Click(System::Object^ sender, System::EventArgs^ e)
 {
 	if (textBox1_b->Text == " ") {
-		MessageBox::Show("Введите название файла!", "Внимание!");
+		MessageBox::Show("Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ С„Р°Р№Р»Р°!", "Р’РЅРёРјР°РЅРёРµ!");
 		return;
 	}
 	std::string filename;
