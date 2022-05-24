@@ -75,7 +75,7 @@ void display();
 
 
 template<class T>
-Graph<T>::Graph() {                                                                  // конструктор без параметров
+Graph<T>::Graph() {                                                                  // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ
 
     this->Size_of_matrix = 0;
     adjacency_matrix = vector<vector<T>>(max_size, vector<T>(max_size));
@@ -94,7 +94,7 @@ Graph<T>::Graph() {                                                             
 }
 
 template<class T>
-Graph<T>::Graph(const int& Size_of_matrix)                                               // конструктор с параметрами
+Graph<T>::Graph(const int& Size_of_matrix)                                               // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 {
     this->Size_of_matrix = Size_of_matrix;
     adjacency_matrix = vector<vector<T>>(Size_of_matrix, vector<T>(Size_of_matrix));
@@ -113,7 +113,7 @@ Graph<T>::Graph(const int& Size_of_matrix)                                      
 }
 
 template<class T>
-int Graph<T>::get_amount_edges()                                      // количество ребер графа
+int Graph<T>::get_amount_edges()                                     // РєРѕР»РёС‡РµСЃС‚РІРѕ СЂРµР±РµСЂ РіСЂР°С„Р°
 {
     if (is_empty()) return 0;
     int amount = 0;
@@ -132,20 +132,20 @@ int Graph<T>::get_amount_edges()                                      // количес
 }
 
 template<class T>
-int Graph<T>::get_weight(const T& vertex_1, const T& vertex_2)  // вес ребра между вершинами
+int Graph<T>::get_weight(const T& vertex_1, const T& vertex_2)  // РІРµСЃ СЂРµР±СЂР° РјРµР¶РґСѓ РІРµСЂС€РёРЅР°РјРё
 {
     int index_vertex_1 = get_vertex_index(vertex_1);
     int index_vertex_2 = get_vertex_index(vertex_2);
 
-    if (is_empty() || index_vertex_1 == -1 || index_vertex_2 == -1) {// выход если вершин нет совсем или нет одной из вершин
-        cout << "Ошибка! Проверьте правильность ввода узлов графа!" << endl;
+    if (is_empty() || index_vertex_1 == -1 || index_vertex_2 == -1) {// РІС‹С…РѕРґ РµСЃР»Рё РІРµСЂС€РёРЅ РЅРµС‚ СЃРѕРІСЃРµРј РёР»Рё РЅРµС‚ РѕРґРЅРѕР№ РёР· РІРµСЂС€РёРЅ
+        cout << "РћС€РёР±РєР°! РџСЂРѕРІРµСЂСЊС‚Рµ РїСЂР°РІРёР»СЊРЅРѕСЃС‚СЊ РІРІРѕРґР° СѓР·Р»РѕРІ РіСЂР°С„Р°!" << endl;
         return 0;
     }
     return adjacency_matrix[index_vertex_1][index_vertex_2];
 }
 
 template<class T>
-int Graph<T>::get_vertex_index(const T& to_find) // получение индекса заданной вершины
+int Graph<T>::get_vertex_index(const T& to_find) // РїРѕР»СѓС‡РµРЅРёРµ РёРЅРґРµРєСЃР° Р·Р°РґР°РЅРЅРѕР№ РІРµСЂС€РёРЅС‹
 {
     if (is_empty()) return -1;
     for (int i = 0; i < this->vertex_List.size(); i++) {
@@ -157,18 +157,18 @@ int Graph<T>::get_vertex_index(const T& to_find) // получение индекса заданной в
 }
 
 template<class T>
-void Graph<T>::insert_vertex(const T& new_vertex) // добавление вершины в вектор
+void Graph<T>::insert_vertex(const T& new_vertex) // РґРѕР±Р°РІР»РµРЅРёРµ РІРµСЂС€РёРЅС‹ РІ РІРµРєС‚РѕСЂ
 {
     if (is_full())
     {
-        cout << "Граф заполнен! Добавление новых вершин невозможно." << endl;
+        cout << "Р“СЂР°С„ Р·Р°РїРѕР»РЅРµРЅ! Р”РѕР±Р°РІР»РµРЅРёРµ РЅРѕРІС‹С… РІРµСЂС€РёРЅ РЅРµРІРѕР·РјРѕР¶РЅРѕ." << endl;
         return;
     }
     vertex_List.push_back(new_vertex);
 }
 
 template<class T>
-void Graph<T>::DeleteVertex() {                       //  удаление вершины 
+void Graph<T>::DeleteVertex() {                       //  СѓРґР°Р»РµРЅРёРµ РІРµСЂС€РёРЅС‹ 
     int h = this->get_Size_of_matrix();
     this->vertex_List.pop_back();
     h--;
@@ -183,11 +183,11 @@ void Graph<T>::DeleteVertex() {                       //  удаление вершины
 }
 
 template<class T>
-void Graph<T>::insert_edge(const T& vertex_1, const T& vertex_2, int value)   // вставка вершины
+void Graph<T>::insert_edge(const T& vertex_1, const T& vertex_2, int value)   // РІСЃС‚Р°РІРєР° РІРµСЂС€РёРЅС‹
 {
     if ((get_vertex_index(vertex_1) == -1 || get_vertex_index(vertex_2) == -1))
     {
-        cout << "Ошибка! Не удалется добавить ребро. " << endl;
+        cout << "РћС€РёР±РєР°! РќРµ СѓРґР°РµС‚СЃСЏ РґРѕР±Р°РІРёС‚СЊ СЂРµР±СЂРѕ. " << endl;
         return;
     }
 
@@ -196,7 +196,7 @@ void Graph<T>::insert_edge(const T& vertex_1, const T& vertex_2, int value)   //
 
     if (adjacency_matrix[index_vertex_1][index_vertex_2] != 0)
     {
-        cout << "Ребро между вершинами уже существует." << endl;
+        cout << "Р РµР±СЂРѕ РјРµР¶РґСѓ РІРµСЂС€РёРЅР°РјРё СѓР¶Рµ СЃСѓС‰РµСЃС‚РІСѓРµС‚." << endl;
         return;
     }
 
@@ -204,13 +204,13 @@ void Graph<T>::insert_edge(const T& vertex_1, const T& vertex_2, int value)   //
 }
 
 template<class T>
-void Graph<T>::insert_edge_car()                          // доп. возможность сократить путь между городами
+void Graph<T>::insert_edge_car()                          // РґРѕРї. РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ СЃРѕРєСЂР°С‚РёС‚СЊ РїСѓС‚СЊ РјРµР¶РґСѓ РіРѕСЂРѕРґР°РјРё
 {
     int from, to;
-    cout << "Коммивояжер передвигается на АВТО из города "; cin >> from; cout << " в город  "; cin >> to;
+    cout << "РљРѕРјРјРёРІРѕСЏР¶РµСЂ РїРµСЂРµРґРІРёРіР°РµС‚СЃСЏ РЅР° РђР’РўРћ РёР· РіРѕСЂРѕРґР° "; cin >> from; cout << "  РІ РіРѕСЂРѕРґ  "; cin >> to;
     if ((get_vertex_index(from) == -1 || get_vertex_index(to) == -1))
     {
-        cout << "Ошибка! Не существует одного города или двух городов. " << endl;
+        cout << "РћС€РёР±РєР°! РќРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ РѕРґРЅРѕРіРѕ РіРѕСЂРѕРґР° РёР»Рё РґРІСѓС… РіРѕСЂРѕРґРѕРІ. " << endl;
         return;
     }
 
@@ -222,13 +222,13 @@ void Graph<T>::insert_edge_car()                          // доп. возможность со
 }
 
 template<class T>
-void Graph<T>::insert_edge_helicopter()                   // доп. возможность сократить путь между городами
+void Graph<T>::insert_edge_helicopter()                   // РґРѕРї. РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ СЃРѕРєСЂР°С‚РёС‚СЊ РїСѓС‚СЊ РјРµР¶РґСѓ РіРѕСЂРѕРґР°РјРё
 {
     int from, to;
-    cout << "Коммивояжер передвигается на ВЕРТОЛЕТЕ из города "; cin >> from; cout << " в город  "; cin >> to;
+    cout << "РљРѕРјРјРёРІРѕСЏР¶РµСЂ РїРµСЂРµРґРІРёРіР°РµС‚СЃСЏ РЅР° Р’Р•Р РўРћР›Р•РўР• РёР· РіРѕСЂРѕРґР°  "; cin >> from; cout << " РІ РіРѕСЂРѕРґ "; cin >> to;
     if ((get_vertex_index(from) == -1 || get_vertex_index(to) == -1))
     {
-        cout << "Ошибка! Не существует одного города или двух городов. " << endl;
+        cout << "РћС€РёР±РєР°! РќРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ РѕРґРЅРѕРіРѕ РіРѕСЂРѕРґР° РёР»Рё РґРІСѓС… РіРѕСЂРѕРґРѕРІ. " << endl;
         return;
     }
 
@@ -240,13 +240,13 @@ void Graph<T>::insert_edge_helicopter()                   // доп. возможность со
 }
 
 template<class T>
-void Graph<T>::insert_edge_scooter()                                // доп. возможность сократить путь между городами
+void Graph<T>::insert_edge_scooter()                                // РґРѕРї. РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ СЃРѕРєСЂР°С‚РёС‚СЊ РїСѓС‚СЊ РјРµР¶РґСѓ РіРѕСЂРѕРґР°РјРё
 {
     int from, to;
-    cout << "Коммивояжер передвигается на ЭЛЕКТРОСАМОКАТЕ из города "; cin >> from; cout << " в город  "; cin >> to;
+    cout << "РљРѕРјРјРёРІРѕСЏР¶РµСЂ РїРµСЂРµРґРІРёРіР°РµС‚СЃСЏ РЅР° Р­Р›Р•РљРўР РћРЎРђРњРћРљРђРўР• РёР· РіРѕСЂРѕРґР°"; cin >> from; cout << " РІ РіРѕСЂРѕРґ  "; cin >> to;
     if ((get_vertex_index(from) == -1 || get_vertex_index(to) == -1))
     {
-        cout << "Ошибка! Не существует одного города или двух городов. " << endl;
+        cout << "РћС€РёР±РєР°! РќРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚ РѕРґРЅРѕРіРѕ РіРѕСЂРѕРґР° РёР»Рё РґРІСѓС… РіРѕСЂРѕРґРѕРІ. " << endl;
         return;
     }
 
@@ -258,10 +258,10 @@ void Graph<T>::insert_edge_scooter()                                // доп. возм
 }
 
 template<class T>
-void Graph<T>::Print()                             // вывод матрицы смежности
+void Graph<T>::Print()                              // РІС‹РІРѕРґ РјР°С‚СЂРёС†С‹ СЃРјРµР¶РЅРѕСЃС‚Рё
 {
     if (!this->is_empty()) {
-        cout << "Матрица смежности графа: " << endl;
+        cout << "РњР°С‚СЂРёС†Р° СЃРјРµР¶РЅРѕСЃС‚Рё РіСЂР°С„Р°: " << endl;
         cout << "   ";
         for (int i = 0; i < vertex_List.size(); i++)
         {
@@ -278,7 +278,7 @@ void Graph<T>::Print()                             // вывод матрицы смежности
         }
     }
     else {
-        cout << "Граф не существует! " << endl;
+        cout << "Р“СЂР°С„ РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚!  " << endl;
 
     }
 }
@@ -309,7 +309,7 @@ Graph<int> Kommivoyazher(Graph<int>& graph, int*** matrix_solution, int** matrix
             matrix_solution[i][j] = new int(graph.adjacency_matrix[i][j]);
         }
     }
-    for (int l = 0; l < size; l++)    // редукция строк
+    for (int l = 0; l < size; l++)    // СЂРµРґСѓРєС†РёСЏ СЃС‚СЂРѕРє
     {
         for (int i = 0; i < size; i++)
         {
@@ -321,7 +321,7 @@ Graph<int> Kommivoyazher(Graph<int>& graph, int*** matrix_solution, int** matrix
                 if (matrix_solution[i][j])
                     *matrix_solution[i][j] -= min_di;
         }
-        for (int j = 0; j < size; j++)                     // редукция столбцов
+        for (int j = 0; j < size; j++)                     // СЂРµРґСѓРєС†РёСЏ СЃС‚РѕР»Р±С†РѕРІ
         {
             int min_dj = 100;
             for (int i = 0; i < size; i++)
@@ -336,7 +336,7 @@ Graph<int> Kommivoyazher(Graph<int>& graph, int*** matrix_solution, int** matrix
             for (int j = 0; j < size; j++)
                 matrix_temp[i][j] = 0;
 
-        for (int i = 0; i < size; i++)               // оценка нулей
+        for (int i = 0; i < size; i++)              // РѕС†РµРЅРєР° РЅСѓР»РµР№
             for (int j = 0; j < size; j++)
             {
                 if (matrix_solution[i][j] && !*matrix_solution[i][j])
@@ -356,7 +356,7 @@ Graph<int> Kommivoyazher(Graph<int>& graph, int*** matrix_solution, int** matrix
                 }
             }
 
-        int max_weight = 0, max_i = 0, max_j = 0;            // сбор всего пути 
+        int max_weight = 0, max_i = 0, max_j = 0;            // СЃР±РѕСЂ РІСЃРµРіРѕ РїСѓС‚Рё 
         for (int i = 0; i < size; i++)
             for (int j = 0; j < size; j++)
                 if (matrix_solution[i][j] && max_weight < matrix_temp[i][j])
@@ -375,7 +375,7 @@ Graph<int> Kommivoyazher(Graph<int>& graph, int*** matrix_solution, int** matrix
 
         matrix_solution[max_j][max_i] = nullptr;
     }
-    //cout << "Отрезки пути ";
+    //cout << "ГЋГІГ°ГҐГ§ГЄГЁ ГЇГіГІГЁ ";
     int s = 0;
     for (int i = 0, j = 0; i < size; i++)
     {
@@ -384,7 +384,7 @@ Graph<int> Kommivoyazher(Graph<int>& graph, int*** matrix_solution, int** matrix
         s += graph.adjacency_matrix[i][j];
     }
     cout << endl;
-    cout << "Кратчайший путь:  ";
+    cout << "РљСЂР°С‚С‡Р°Р№С€РёР№ РїСѓС‚СЊ:   ";
     int temp = 0;
 
     for (int l = 0; l < size;)
@@ -409,7 +409,7 @@ Graph<int> Kommivoyazher(Graph<int>& graph, int*** matrix_solution, int** matrix
     }
 
     house_2 = s;
-    cout << endl << "Время в пути: " << s<<" ч."<<endl;
+    cout << endl << "Р’СЂРµРјСЏ РІ РїСѓС‚Рё: " << s<<" С‡."<<endl;
     for (int i = 0; i < graph.Size_of_matrix; ++i)
     {
         for (int j = 0; j < graph.Size_of_matrix; ++j)
@@ -422,7 +422,7 @@ Graph<int> Kommivoyazher(Graph<int>& graph, int*** matrix_solution, int** matrix
             }
         }
     }
-    graph_solution.vertex_List = graph.vertex_List;           //отметка дороги в матрице смежности для визуализации на графе(ребра красного цвета)
+    graph_solution.vertex_List = graph.vertex_List;           //РѕС‚РјРµС‚РєР° РґРѕСЂРѕРіРё РІ РјР°С‚СЂРёС†Рµ СЃРјРµР¶РЅРѕСЃС‚Рё РґР»СЏ РІРёР·СѓР°Р»РёР·Р°С†РёРё РЅР° РіСЂР°С„Рµ(СЂРµР±СЂР° РєСЂР°СЃРЅРѕРіРѕ С†РІРµС‚Р°)
     for (int i = 0; i < for_color.size() - 1; i++)
     {
         for (int j = i + 1; j < for_color.size() - 1; j += size - j + i)
@@ -437,7 +437,7 @@ Graph<int> Kommivoyazher(Graph<int>& graph, int*** matrix_solution, int** matrix
 }
 
 template<class T>
-Graph<T> create_graph(Graph<T>& graph)   // создание графа
+Graph<T> create_graph(Graph<T>& graph)   // СЃРѕР·РґР°РЅРёРµ РіСЂР°С„Р°
 {
     graph.set_size_Matrix(7);
     for (int i = 1; i < 8; i++) {
@@ -495,13 +495,13 @@ Graph<T> create_graph(Graph<T>& graph)   // создание графа
     return graph;
 }
 
-void hours(int h_2) {                                            // подсчет разницы времени
+void hours(int h_2) {                                            // РїРѕРґСЃС‡РµС‚ СЂР°Р·РЅРёС†С‹ РІСЂРµРјРµРЅРё
     int house_1 = 21;
-    cout << "Время в пути сократилось на " << house_1 - h_2 << " ч." << endl;
+    cout << "Г‚Г°ГҐГ¬Гї Гў ГЇГіГІГЁ Г±Г®ГЄГ°Г ГІГЁГ«Г®Г±Гј Г­Г  " << house_1 - h_2 << " Г·." << endl;
 
 }
 
-void set_coordinat_vertex(int i, int n)              // установка координат для вершин графа для визуализации
+void set_coordinat_vertex(int i, int n)              // СѓСЃС‚Р°РЅРѕРІРєР° РєРѕРѕСЂРґРёРЅР°С‚ РґР»СЏ РІРµСЂС€РёРЅ РіСЂР°С„Р° РґР»СЏ РІРёР·СѓР°Р»РёР·Р°С†РёРё
 {
     int R1;
 
@@ -524,11 +524,11 @@ void set_coordinat_vertex(int i, int n)              // установка координат для 
     vertex_coord[i].y = y1;
 }
 
-void draw_circle(int x, int y, int R)    // отрисовка вершин
+void draw_circle(int x, int y, int R)     // РѕС‚СЂРёСЃРѕРІРєР° РІРµСЂС€РёРЅ
 {
     glColor3f(0.0, 0.7, 1.0);
     float x1, y1;
-    glBegin(GL_POLYGON);            // круг
+    glBegin(GL_POLYGON);            // РєСЂСѓРі
     for (int i = 0; i < 360; i++)
     {
         float theta = 2.0f * 3.1415926f * float(i) / float(360);
@@ -538,7 +538,7 @@ void draw_circle(int x, int y, int R)    // отрисовка вершин
     }
     glEnd();
 
-    glColor3f(0.0, 0.0f, 0.0f); //окружность
+    glColor3f(0.0, 0.0f, 0.0f); //РѕРєСЂСѓР¶РЅРѕСЃС‚СЊ
     float x2, y2;
     glBegin(GL_LINE_LOOP);
     for (int i = 0; i < 360; i++)
@@ -560,7 +560,7 @@ void draw_text_for_edge(int text_1, int text_2, int x1, int y1)
         glutBitmapCharacter(font, s[j]);
 }
 
-void draw_text_for_vertex(int text, int x1, int y1)   // отрисовка номеров вершин
+void draw_text_for_vertex(int text, int x1, int y1)   // РѕС‚СЂРёСЃРѕРІРєР° РЅРѕРјРµСЂРѕРІ РІРµСЂС€РёРЅ
 {
     GLvoid* font = GLUT_BITMAP_HELVETICA_18;
     string s = to_string(text);
@@ -569,7 +569,7 @@ void draw_text_for_vertex(int text, int x1, int y1)   // отрисовка номеров верши
         glutBitmapCharacter(font, s[j]);
 }
 
-void draw_vertex(int n)                       // отрисовка вершин
+void draw_vertex(int n)                      // РѕС‚СЂРёСЃРѕРІРєР° РІРµСЂС€РёРЅ
 {
     for (int i = 0; i < n; i++) {
         draw_circle(vertex_coord[i].x, vertex_coord[i].y, R);
@@ -577,7 +577,7 @@ void draw_vertex(int n)                       // отрисовка вершин
     }
 }
 
-void drawLine(int text, int text_2, int x0, int y0, int x1, int y1) {          // отрисовка ребер
+void drawLine(int text, int text_2, int x0, int y0, int x1, int y1) {          // РѕС‚СЂРёСЃРѕРІРєР° СЂРµР±РµСЂ
     glColor3f(0.0f, 0.0f, 0.0f);
     glBegin(GL_LINES);
     glVertex2i(x0, y0);
@@ -587,7 +587,7 @@ void drawLine(int text, int text_2, int x0, int y0, int x1, int y1) {          /
     //draw_text_for_edge(text, text_2, (x0 + x1) / 2 + 15, (y0 + y1) / 2 + 15);
 }
 
-void drawLine_color(int x0, int y0, int x1, int y1) {        // отрисовка ребер при решении Коммивояжера ( дорога - красный)
+void drawLine_color(int x0, int y0, int x1, int y1) {        // РѕС‚СЂРёСЃРѕРІРєР° СЂРµР±РµСЂ РїСЂРё СЂРµС€РµРЅРёРё РљРѕРјРјРёРІРѕСЏР¶РµСЂР° ( РґРѕСЂРѕРіР° - РєСЂР°СЃРЅС‹Р№)
     glColor3f(1.0, 0.0, 0.0);
     glBegin(GL_LINES);
     glVertex2i(x0, y0);
@@ -597,7 +597,7 @@ void drawLine_color(int x0, int y0, int x1, int y1) {        // отрисовка ребер 
 }
 
 template<class T>
-void Graph<T>::paint_graph()   // отрисовка графа в целом
+void Graph<T>::paint_graph()   // РѕС‚СЂРёСЃРѕРІРєР° РіСЂР°С„Р° РІ С†РµР»РѕРј
 {
     int n = vertex_List.size();
     for (int i = 0; i < n; i++)
@@ -652,15 +652,15 @@ void Graph<T>::paint_graph_solution()
 
 }
 
-Graph<int> Graph_new()                 // создание нового графа
+Graph<int> Graph_new()                 // СЃРѕР·РґР°РЅРёРµ РЅРѕРІРѕРіРѕ РіСЂР°С„Р°
 {
 
     int edge_count, first_vertex, second_vertex, weight_edge, vertex_count;
-    cout << "Введите количество вершин графа: ";
+    cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® ГўГҐГ°ГёГЁГ­ ГЈГ°Г ГґГ : ";
     cin >> vertex_count;
     Graph<int> graph(vertex_count);
     cout << endl;
-    cout << "Введите количество ребер графа: ";
+    cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г°ГҐГЎГҐГ° ГЈГ°Г ГґГ : ";
     cin >> edge_count; cout << endl;
     for (int i = 1; i <= vertex_count; ++i) {
         int* vertPtr = &i;
@@ -668,19 +668,19 @@ Graph<int> Graph_new()                 // создание нового графа
     }
 
     for (int i = 0; i < edge_count; ++i) {
-        cout << "ИСХОДНАЯ вершина: "; cin >> first_vertex; cout << endl;
+        cout << "Г€Г‘Г•ГЋГ„ГЌГЂГџ ГўГҐГ°ГёГЁГ­Г : "; cin >> first_vertex; cout << endl;
         int* first_vertex_ptr = &first_vertex;
-        cout << "КОНЕЧНАЯ вершина: "; cin >> second_vertex; cout << endl;
+        cout << "ГЉГЋГЌГ…Г—ГЌГЂГџ ГўГҐГ°ГёГЁГ­Г : "; cin >> second_vertex; cout << endl;
         int* second_vertex_ptr = &second_vertex;
 
-        cout << "Вес ребра: "; cin >> weight_edge; cout << endl;
+        cout << "Г‚ГҐГ± Г°ГҐГЎГ°Г : "; cin >> weight_edge; cout << endl;
         graph.insert_edge(*first_vertex_ptr, *second_vertex_ptr, weight_edge);
     }
     cout << endl;
     return graph;
 }
 
-void drawMenuText(string text, int x1, int y1)   // отрисовка текста кнопок
+void drawMenuText(string text, int x1, int y1)   // Г®ГІГ°ГЁГ±Г®ГўГЄГ  ГІГҐГЄГ±ГІГ  ГЄГ­Г®ГЇГ®ГЄ
 {
     GLvoid* font = GLUT_BITMAP_HELVETICA_18;
     string s = text;
@@ -689,11 +689,11 @@ void drawMenuText(string text, int x1, int y1)   // отрисовка текста кнопок
         glutBitmapCharacter(font, s[j]);
 }
 
-void drawMenu()                // отрисовка меню
+void drawMenu()                // Г®ГІГ°ГЁГ±Г®ГўГЄГ  Г¬ГҐГ­Гѕ
 {
     int __ot_1 = 60;
     int __ot_2 = 730;
-    glColor3d(0.0, 1.0, 0.5);   // подложка
+    glColor3d(0.0, 1.0, 0.5);   // ГЇГ®Г¤Г«Г®Г¦ГЄГ 
     glBegin(GL_QUADS);
     glVertex2i(__ot_1 - 10, __ot_2 - 50);
     glVertex2i(__ot_1 + 160, __ot_2 - 50);
@@ -802,7 +802,7 @@ void drawMenu()                // отрисовка меню
     drawMenuText("Clear", __ot_1, __ot_2 - __ot_1 - 452);
 }
 
-void Click_menu(int btn, int stat, int x, int y) {             // работа кнопок меню
+void Click_menu(int btn, int stat, int x, int y) {             // Г°Г ГЎГ®ГІГ  ГЄГ­Г®ГЇГ®ГЄ Г¬ГҐГ­Гѕ
     int __ot_1 = 60;
     int __ot_2 = 730;
 
@@ -840,9 +840,9 @@ void Click_menu(int btn, int stat, int x, int y) {             // работа кнопок 
             int weight_edge;
             int size_m = graph.get_Size_of_matrix();
 
-            cout << "ИСХОДНАЯ вершина: "; cin >> first_vertex; cout << endl;
+            cout << "Г€Г‘Г•ГЋГ„ГЌГЂГџ ГўГҐГ°ГёГЁГ­Г : "; cin >> first_vertex; cout << endl;
             int* firsr_vertex_ptr = &first_vertex;
-            cout << "КОНЕЧНАЯ вершина: "; cin >> second_vertex; cout << endl;
+            cout << "ГЉГЋГЌГ…Г—ГЌГЂГџ ГўГҐГ°ГёГЁГ­Г : "; cin >> second_vertex; cout << endl;
             int* second_vertex_ptr = &second_vertex;
 
             if (first_vertex > size_m || second_vertex > size_m) {
@@ -852,7 +852,7 @@ void Click_menu(int btn, int stat, int x, int y) {             // работа кнопок 
                 graph.insert_vertex(*vertPtr);
             }
 
-            cout << "Вес ребра: "; cin >> weight_edge; cout << endl;
+            cout << "Г‚ГҐГ± Г°ГҐГЎГ°Г : "; cin >> weight_edge; cout << endl;
             graph.insert_edge(*firsr_vertex_ptr, *second_vertex_ptr, weight_edge);
         }
         if (x > __ot_1 && x < __ot_1 + 150 && y >  __ot_1 + 350 && y < __ot_1 + 380)
@@ -860,14 +860,14 @@ void Click_menu(int btn, int stat, int x, int y) {             // работа кнопок 
             int count_vertex = graph.get_Size_of_matrix();
             int first_vertex;
 
-            cout << "Введите вершину: "; cin >> first_vertex; cout << endl;
+            cout << "Г‚ГўГҐГ¤ГЁГІГҐ ГўГҐГ°ГёГЁГ­Гі: "; cin >> first_vertex; cout << endl;
             int* first_vertex_ptr = &first_vertex;
             if (first_vertex == count_vertex)
             {
                 count_vertex--;
                 graph.DeleteVertex();
             }
-            else cout << "Невозможно удалить вершину \n";
+            else cout << "ГЌГҐГўГ®Г§Г¬Г®Г¦Г­Г® ГіГ¤Г Г«ГЁГІГј ГўГҐГ°ГёГЁГ­Гі \n";
           
         }
         if (x > __ot_1 && x < __ot_1 + 150 && y >  __ot_1 + 400 && y < __ot_1 + 430)
@@ -882,7 +882,7 @@ void Click_menu(int btn, int stat, int x, int y) {             // работа кнопок 
     glutPostRedisplay();
 }
 
-void display()              // картинка окна, окно
+void display()              // ГЄГ Г°ГІГЁГ­ГЄГ  Г®ГЄГ­Г , Г®ГЄГ­Г®
 {
     glShadeModel(GL_SMOOTH);
     glMatrixMode(GL_PROJECTION);
